@@ -1,0 +1,23 @@
+
+service: user-lambda
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+custom:
+  webpack:
+    webpackConfig: 'webpack.config.js'
+    includeModules: true
+
+functions:
+  getUser:
+    handler: src/handler/getUser.handler
+    events:
+      - httpApi:
+          method: GET
+          path: /user/{id}
