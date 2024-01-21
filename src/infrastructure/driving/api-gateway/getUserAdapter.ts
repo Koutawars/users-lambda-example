@@ -5,7 +5,7 @@ import { getUser, getUserDependencies } from "../../../cases/getUser";
 
 export const getUserAdapter = (dependencies: getUserDependencies) => async (event: APIGatewayProxyEventV2, context: Context): Promise<APIGatewayProxyResultV2> => {
     try {
-        const input = { id: event.pathParameters?.id ?? "" };
+        const input = { id: event.pathParameters!.id! };
         const user = await getUser(dependencies, input);
         return makeResponse<User>(200, user);
     } catch (error: any) {
