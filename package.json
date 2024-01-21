@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx jest",
+    "test:cov": "npx jest --coverage",
     "start": "npx sls offline start",
     "build": "webpack"
   },

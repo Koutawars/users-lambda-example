@@ -9,7 +9,7 @@ export class UserLocal implements UserRepository {
         this.file = file;
     }
 
-    getUser(id: string): Promise<User> {
+    getUser(id: string): Promise<User | null> {
         return new Promise((resolve, reject) => {
             fs.readFile(this.file, "utf8", (error, data) => {
                 if (error) {
