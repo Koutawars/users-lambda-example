@@ -9,14 +9,15 @@ export class UserLocal implements UserRepository {
         this.file = file;
     }
 
-    getUser(id: string): Promise<User | null> {
+    getUser(id: string): Promise<User | undefined> {
         return new Promise((resolve, reject) => {
             fs.readFile(this.file, "utf8", (error, data) => {
                 if (error) {
                     reject(error);
+                } else {
+                    const users = JSON.parse(data);
+                    resolve(users.find((user: User) => user.id === id));
                 }
-                const users = JSON.parse(data);
-                resolve(users.find((user: User) => user.id === id));
             });
         });
     }

@@ -34,7 +34,7 @@ describe('getUser', () => {
     });
 
     it('should throw an error when a user with the given id does not exist', async () => {
-        mockUserRepository.getUser.mockResolvedValue(null);
+        mockUserRepository.getUser.mockResolvedValue(undefined);
         try {
             await getUser(dependencies, input);
         } catch (error: any) {
