@@ -17,9 +17,3 @@ Escenario: Usuario solicitado no existe
 - Y no hay ningún usuario con ID '999' en la base de datos
 - Cuando solicito los detalles del usuario con ID '999'
 - Entonces recibo un mensaje de error indicando que el usuario no se encontró
-
-Escenario: ID de usuario no válido
-
-- Dado que tengo acceso a la aplicación
-- Cuando solicito los detalles del usuario con un ID no válido, como 'abc'
-- Entonces recibo un mensaje de error indicando que el formato del ID es incorrecto
