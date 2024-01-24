@@ -1,3 +1,5 @@
+### BDD
+
 Feature: Obtener detalles del usuario por ID
 
 Descripción: Como usuario de la aplicación, quiero poder obtener los detalles de un usuario específico mediante su ID para acceder a su información.
